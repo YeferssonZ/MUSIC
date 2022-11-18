@@ -7,8 +7,23 @@
         <div class="row">
             <div class="col-5 m-3">
                 <div class="text-center">
-                    <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/eb/a5/56/eba556cae64b32ed24efcf140078f1ba.jpg" alt="" height="570" width="">
-                   
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item">
+                                <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/eb/a5/56/eba556cae64b32ed24efcf140078f1ba.jpg" class="d-block" alt="Harry" height="580" width="440">
+                            </div>
+                            <div class="carousel-item active">
+                                <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/8b/a2/d4/8ba2d473f224c7d8f7ee652cc214555f.jpg" class="d-block" alt="Billie" height="580" width="440">
+                            </div>
+                            <div class="carousel-item">
+                                <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/73/87/c3/7387c3f585e183568aecbb532ce26fa6.jpg" class="d-block" alt="KevinK" height="580" width="440">
+                            </div>
+                            <div class="carousel-item">
+                                <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/5c/54/5c/5c545c47b218dee53c2c1aeee2e5b60d.jpg" class="d-block" alt="ShawnM" height="580" width="440">
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-5 m-5 ">
@@ -16,7 +31,7 @@
                     <div class="">
                         <h2>
                             <b>
-                                {{ __('Spotify') }}
+                                {{ __('Musgrove') }}
                             </b>
                         </h2>
                     </div>
@@ -58,7 +73,7 @@
                                 <label for="password" class="col-form-label text-md"><b>{{ __('Contraseña') }}</b></label>
 
                                 <div class="col-md-11">
-                                    <input id="password" type="password" placeholder="*******" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <input id="password" type="password" placeholder="********" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -72,7 +87,7 @@
                                 <label for="password-confirm" class="col-form-label text-md"><b>{{ __('Confirmar Contraseña') }}</b></label>
 
                                 <div class="col-md-11">
-                                    <input id="password-confirm" type="password" placeholder="*******" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password-confirm" type="password" placeholder="********" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
 

@@ -30,7 +30,7 @@
                     <input class="form-control" type="file" name="musica">
                 </div>
                 <div class="col-auto">
-                    <input class="form-control" type="file" name="musica">
+                    <input class="form-control" type="file" name="imagen" accept="image/jpeg">
                 </div>
                 <div class="col-auto">
                     <button type="submit" class="btn btn-primary mb-3">Subir</button>
@@ -40,17 +40,17 @@
                 @foreach($musicas as $musica)
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img height="200" src="/musica/{{$musica->ruta}}" alt="Imagen">
-                        <audio autoplay src="mp3"></audio>
+                        <img height="200" src="mostrarImagen/{{$musica->ruta}}" alt="Imagen">
                         <div class="card-body">
-                            <p class="card-text"><center>{{$musica->nombre_musica}}</center></p>
+                            <p class="card-text">
+                                <center>{{$musica->nombre_musica}}</center>
+                            </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <form method="POST" action="{{ route('eliminarMusica') }}">
                                     @csrf
                                     <div class="btn-group">
                                         <input type="hidden" name="id_musica" value="{{$musica->id}}">
-                                        <audio controls="" style="vertical-align: middle" src="mostrarCancion/prueba.mp3" type="audio/mp3" controlslist="nodownload">Your browser does not support the audio element.
-                                        </audio>
+                                        <audio controls="" style="vertical-align: middle" src="mostrarCancion/{{$musica->ruta_mp3}}" type="audio/mp3" controlslist="nodownload"></audio>
                                         <button><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                                                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />

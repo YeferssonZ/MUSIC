@@ -40,6 +40,11 @@ return [
             'root' => storage_path('app/musicas'),
             'throw' => false,
         ],
+        'fotos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/fotos'),
+            'throw' => false,
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

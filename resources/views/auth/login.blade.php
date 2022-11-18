@@ -10,14 +10,14 @@
                     <!-- style=" background-color: #1D1D1D" -->
                     <div class="m-3"> <i class="fa-brands fa-spotify"></i>
                         <h2>
-                            <b>{{ __('Spotify') }}</b>
+                            <b>{{ __('Musgrove') }}</b>
                         </h2>
                     </div>
                     <div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="text-center m-3">
-                                <small><b>Para continuar, inicia sesion en Spotify</b></small>
+                                <small><b>Para continuar, inicia sesion en Musgrove</b></small>
                             </div>
 
                             <div class="row mb-3">
@@ -84,8 +84,22 @@
             </div>
             <div class="col-5 m-2">
                 <div class="text-center">
-                    <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/ef/72/66/ef726607c53690882ed174465da791b1.jpg" alt="" height="530" width="">
-       
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/18/7d/45/187d45cc84a776fb63b1027a3bf90dce.jpg" class="d-block" alt="Weeknd" height="570" width="80%">
+                            </div>
+                            <div class="carousel-item">
+                                <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/ef/72/66/ef726607c53690882ed174465da791b1.jpg" class="d-block" alt="OliviaR" height="570" width="80%">
+                            </div>
+                            <div class="carousel-item">
+                                <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/58/41/4e/58414e85ba55d651cb430fec359a37c5.jpg" class="d-block" alt="Chlorine" height="570" width="80%">
+                            </div>
+                            <div class="carousel-item">
+                                <img style="border-radius:10px ;" src="https://i.pinimg.com/564x/bf/c2/bc/bfc2bcfb1063f74fd2266e02dc63388c.jpg" class="d-block" alt="Coldplay" height="570" width="80%">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

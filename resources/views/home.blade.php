@@ -25,12 +25,12 @@
                 @foreach($musicas as $musica)
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img height="200" src="/musica/{{$musica->ruta}}" alt="Imagen">
+                        <img height="200" src="mostrarImagen/{{$musica->ruta}}" alt="Imagen">
                         <div class="card-body">
                             <p class="card-text">
                                 <center>{{$musica->nombre_musica}}</center>
                             </p>
-                            <center><audio controls="" style="vertical-align: middle" src="mostrarCancion/prueba.mp3" type="audio/mp3" controlslist="nodownload">
+                            <center><audio controls="" style="vertical-align: middle" src="mostrarCancion/{{$musica->ruta_mp3}}" type="audio/mp3" controlslist="nodownload">
                                 </audio></center>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">

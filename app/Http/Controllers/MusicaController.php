@@ -19,9 +19,9 @@ class MusicaController extends Controller
         return view('musicas.musicas', compact('musicas'));
     }
 
-    public function mostrarMusica(string $ruta)
+    public function mostrarMusica(string $ruta, $ruta_mp3)
     {
-        $file = Storage::disk('musicas')->get($ruta);
+        $file = Storage::disk('musicas')->get($ruta, $ruta_mp3);
         return Image::make($file)->response();
     }
 
@@ -29,13 +29,20 @@ class MusicaController extends Controller
     {
         if ($request->hasFile('musica')) {
             $id = auth()->user()->id;
-            $image      = $request->file('musica');
-            $fileName   = time() . '.' . $image->getClientOriginalExtension();
-            Storage::disk('musicas')->put('/' . $fileName, file_get_contents($image));
+            $archivo_musica     = $request->file('musica');
+            $fileName_musica   = time() . '.' . $archivo_musica->getClientOriginalExtension();
+            Storage::disk('musicas')->put('/' . $fileName_musica  , file_get_contents($archivo_musica ));
+
+            $archivo_imagen     = $request->file('imagen');
+            $fileName_imagen   = time() . '.' . $archivo_imagen->getClientOriginalExtension();
+            Storage::disk('fotos')->put('/' . $fileName_imagen, file_get_contents($archivo_imagen));
+
+
             $musica = new Musica;
             $musica->user_id = $id;
             $musica->nombre_musica = $request->nombre_musica;
-            $musica->ruta = $fileName;
+            $musica->ruta_mp3 = $fileName_musica;
+            $musica->ruta = $fileName_imagen;
             $musica->save();
             return redirect('/musicas');
         }
@@ -47,6 +54,7 @@ class MusicaController extends Controller
             $musica->delete();
 
             Storage::disk('musicas')->delete($musica->ruta);
+            Storage::disk('musicas')->delete($musica->ruta_mp3);
             return redirect('/musicas');
         }
     }
@@ -71,4 +79,10 @@ class MusicaController extends Controller
   
     return response()->file( $file );
     }
+    public function mostrarImagen(string $nombre){
+
+        $file = Storage::disk('fotos')->get($nombre);
+        return Image::make($file)->response();
+        
+     }
 }

@@ -26,6 +26,7 @@ Route::get('/musica/{ruta}', [App\Http\Controllers\MusicaController::class, 'mos
 Route::post('/subirMusica', [App\Http\Controllers\MusicaController::class, 'subirMusica'])->name('subirMusica');
 Route::post('/eliminarMusica', [App\Http\Controllers\MusicaController::class, 'eliminarMusica'])->name('eliminarMusica');
 Route::get('/mostrarCancion/{nombre}', [App\Http\Controllers\MusicaController::class, 'mostrarCancion'])->name('mostrarCancion');
+Route::get('/mostrarImagen/{nombre}', [App\Http\Controllers\MusicaController::class, 'mostrarImagen'])->name('mostrarImagen');
 Route::post('/subirComentario', [App\Http\Controllers\MusicaController::class, 'subirComentario'])->name('subirComentario');
 
 
